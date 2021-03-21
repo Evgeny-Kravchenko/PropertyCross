@@ -1,11 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Property cross
     </ion-title>
+    <ion-buttons slot="primary"
+      ><app-button type="primary" text="Faves"></app-button
+    ></ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-loading></app-loading>
+  <p [className]="'instructionalText'">
+    Use the form below to search for houses to buy. You can search by
+    place-name, postcode, or click 'My location', to search in your current
+    location!
+  </p>
+  <div [className]="'actionsContainer'">
+    <app-input
+      clearInput="true"
+      placeholder="Type here"
+      autofocus="true"
+      [value]="inputValue"
+      (changed)="onChanged($event)"
+    ></app-input>
+    <div [className]="'buttonsContainer'">
+      <app-button text="Go"></app-button>
+      <app-button text="My location"></app-button>
+    </div>
+  </div>
+  <app-results-list *ngIf="!isError" [header]="'Recent searches'"></app-results-list>
+  <app-reponse-message
+    *ngIf="isError"
+    type="danger"
+    text="There was a problem with your search"
+  ></app-reponse-message>
 </ion-content>
