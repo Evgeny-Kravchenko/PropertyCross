@@ -1,0 +1,9 @@
+<ng-container [ngSwitch]="currentPlatform">
+  <ion-spinner name="circles" *ngSwitchCase="'android'"
+    >Android loading</ion-spinner
+  >
+  <ion-spinner *ngSwitchCase="'ios'">IOS loading</ion-spinner>
+  <ion-spinner name="dots" *ngSwitchCase="'windows'"
+    >Windows loading</ion-spinner
+  >
+</ng-container>

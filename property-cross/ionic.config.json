@@ -1,0 +1,7 @@
+{
+  "name": "property-cross",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
